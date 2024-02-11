@@ -1,3 +1,3 @@
 #!/usr/bin/sh
-
-ln -vs /home/$USER/dotfiles/!(README.md|symlink.sh|.git) /home/$USER/.config/
+gitdotfiles=$(pwd)
+ln -vs $gitdotfiles/!(README.md|symlink.sh|.git) /home/$USER/.config/
