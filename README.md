@@ -9,3 +9,9 @@ bash prompt
 ```sh
 PS1="\[\e[38;5;153m\][\u\[\e[38;5;153m\]@\[\e[38;5;153m\]\h \[\e[38;5;214m\]\w\[\e[38;5;153m\]]\[\033[0m\]$ "
 ```
+
+thicker fonts:
+```sh
+/etc/environment
+FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
+```
