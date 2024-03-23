@@ -22,5 +22,5 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 ```
 make sure you've logged out and back in at least once 
 ```sh
-yay -S ttf-ms-win11-auto adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts && yay -Rns gnu-free-fonts
+yay -S ttf-ms-win11-auto adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts && yay -Rns gnu-free-fonts
 ```
