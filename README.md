@@ -5,10 +5,10 @@ sudo usermod -aG network,floppy,scanner,power,video,storage,optical,kvm,input,di
 ```
 
 ```sh
-sudo pacman -S --needed git base-devel man pipewire pipewire-pulse wireplumber neovim mpv hdparm bat powertop keepassxc feh fzf btop udisks2 dunst acpi brightnessctl slock pcmanfm-gtk3 ttf-jetbrains-mono-nerd gnu-free-fonts ttf-arphic-uming ttf-indic-otf noto-fonts-emoji
+sudo pacman -S --needed git base-devel man pipewire pipewire-pulse wireplumber neovim mpv hdparm bat powertop keepassxc feh fzf btop udisks2 dunst acpi brightnessctl slock pcmanfm-gtk3 ttf-jetbrains-mono-nerd
 ```
 ```sh
-paru -S lf bashmount ctpv newsraft numlockx librewolf-bin brave-bin ungoogled-chromium-bin compfy invidtui-bin ttf-ms-fonts
+yay -S lf bashmount ctpv newsraft numlockx librewolf-bin brave-bin ungoogled-chromium-bin compfy invidtui-bin
 ```
 bash prompt
 ```sh
@@ -19,4 +19,8 @@ thicker fonts:
 ```sh
 /etc/environment
 FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
+```
+make sure you've logged out and back in at least once 
+```sh
+yay -S ttf-ms-win11-auto adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts && yay -Rns gnu-free-fonts
 ```
