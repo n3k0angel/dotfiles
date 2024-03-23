@@ -1,4 +1,9 @@
 # dotfiles
+groups to make stuff easier
+```sh
+sudo usermod -aG network floppy scanner power video storage optical kvm input disk audio $USER
+```
+
 ```sh
 sudo pacman -S --needed git base-devel man pipewire pipewire-pulse wireplumber neovim mpv hdparm bat powertop keepassxc feh fzf btop udisks2 dunst acpi brightnessctl slock pcmanfm-gtk3 ttf-jetbrains-mono-nerd gnu-free-fonts ttf-arphic-uming ttf-indic-otf noto-fonts-emoji
 ```
