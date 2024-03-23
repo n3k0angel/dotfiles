@@ -1,7 +1,7 @@
 # dotfiles
 groups to make stuff easier
 ```sh
-sudo usermod -aG network floppy scanner power video storage optical kvm input disk audio $USER
+sudo usermod -aG network,floppy,scanner,power,video,storage,optical,kvm,input,disk,audio $USER
 ```
 
 ```sh
