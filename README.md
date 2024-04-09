@@ -8,7 +8,7 @@ sudo usermod -aG network,floppy,scanner,power,video,storage,optical,kvm,input,di
 sudo pacman -S --needed git base-devel man pipewire pipewire-pulse wireplumber neovim mpv hdparm bat powertop keepassxc feh fzf btop udisks2 dunst acpi brightnessctl slock pcmanfm-gtk3 ttf-jetbrains-mono-nerd
 ```
 ```sh
-sudo pacman -S --needed base-devel && git clone https://aur.archlinux.org/paru-bin.git && cd paru-bin && makepkg -si && paru --gendb && cd .. && sudo rm -rv paru-bin
+sudo pacman -S --needed base-devel git && git clone https://aur.archlinux.org/paru-bin.git && cd paru-bin && makepkg -si && paru --gendb && cd .. && sudo rm -rv paru-bin
 ```
 ```sh
 paru -S lf bashmount ctpv newsraft numlockx librewolf-bin brave-bin ungoogled-chromium-bin compfy invidtui-bin gpg-tui
