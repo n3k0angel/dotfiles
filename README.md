@@ -11,7 +11,7 @@ sudo pacman -S --needed git base-devel man pipewire pipewire-pulse wireplumber n
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si && yay -Y --gendb && cd .. && sudo rm -rv yay-bin
 ```
 ```sh
-yay -S lf bashmount ctpv newsraft numlockx librewolf-bin brave-bin ungoogled-chromium-bin compfy invidtui-bin
+yay -S lf bashmount ctpv newsraft numlockx librewolf-bin brave-bin ungoogled-chromium-bin compfy invidtui-bin gpg-tui
 
 ```
 bash prompt
