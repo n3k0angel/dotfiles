@@ -1,3 +1,5 @@
+On Artix Linux, make sure you've enabled Arch repos!
+
 # Install script
 ```
 cd && git clone https://github.com/n3k0angel/dotfiles && cd dotfiles && chmod +x install.sh && ./install.sh

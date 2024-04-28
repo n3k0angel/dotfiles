@@ -1,5 +1,6 @@
 #!/usr/bin/sh
 set -e
+set -o pipefail
 
 if [ $EUID = 0 ]; then
     echo "Do not run as root!"
@@ -17,7 +18,9 @@ mkdir -p $SSHDIR
 sudo usermod -aG network,floppy,scanner,power,video,storage,optical,kvm,input,disk,audio $USER
 
 # Install stuff
-sudo pacman -S --needed --noconfirm git base-devel man pipewire pipewire-pulse wireplumber neovim mpv hdparm bat powertop keepassxc feh fzf btop udisks2 dunst acpi brightnessctl slock pcmanfm-gtk3
+sudo pacman -S --needed --noconfirm git base-devel man pipewire pipewire-pulse wireplumber neovim mpv hdparm bat powertop keepassxc feh fzf btop udisks2 dunst acpi brightnessctl slock pcmanfm-gtk3 xsel xdg-user-dirs
+
+xdg-user-dirs-update
 
 # Install paru
 cd /home/$USER
@@ -37,6 +40,7 @@ paru -S --needed --noconfirm lf bashmount ctpv newsraft numlockx librewolf-bin b
 # Bash prompt
 sed '/PS1/d' /home/$USER/.bashrc > /home/$USER/bashrc-temp
 mv /home/$USER/bashrc-temp /home/$USER/.bashrc
+echo 'echo PS1="\[\e[38;5;153m\][\u\[\e[38;5;153m\]@\[\e[38;5;153m\]\h \[\e[38;5;214m\]\w\[\e[38;5;153m\]]\[\033[0m\]$ "' >> /home/$USER/.bashrc
 echo "EDITOR=nvim" >> /home/$USER/.bashrc
 echo 'alias ls="ls -lah --color=always"' >> /home/$USER/.bashrc
 echo 'alias bm="bashmount"' >> /home/$USER/.bashrc
@@ -52,7 +56,7 @@ cp -r .ssh/* $SSHDIR/
 
 # Create a script to be run after logging out and back in
 echo '#!/usr/bin/sh' > /home/$USER/run-me.sh
-echo 'paru -S --noconfirm ttf-jetbrains-mono-nerd ttf-ms-win11-auto adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-emoji && paru -Rns gnu-free-fonts' >> /home/$USER/run-me.sh
+echo 'paru -S --noconfirm ttf-jetbrains-mono-nerd ttf-ms-win11-auto adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-emoji && paru -Rns --noconfirm gnu-free-fonts' >> /home/$USER/run-me.sh
 echo 'echo "Done!!!"' >> /home/$USER/run-me.sh
 echo 'rm /home/$USER/run-me.sh' >> /home/$USER/run-me.sh
 
