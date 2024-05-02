@@ -13,7 +13,7 @@ $ sudo usermod -aG network,floppy,scanner,power,video,storage,optical,kvm,input,
 
 Needed packages
 ```sh
-$ sudo pacman -S --needed git base-devel man pipewire pipewire-pulse wireplumber neovim mpv hdparm bat powertop keepassxc feh fzf btop udisks2 dunst acpi brightnessctl slock pcmanfm-gtk3
+$ sudo pacman -S --needed --noconfirm git base-devel man pipewire pipewire-pulse wireplumber neovim mpv hdparm bat powertop keepassxc feh fzf btop udisks2 dunst acpi brightnessctl slock pcmanfm-gtk3 xsel xdg-user-dirs chafa ffmpegthumbnailer
 ```
 
 Paru
