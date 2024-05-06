@@ -28,7 +28,7 @@ $ paru -S lf bashmount ctpv newsraft numlockx librewolf-bin brave-bin ungoogled-
 
 Bash prompt
 ```sh
-PS1="\[\e[38;5;153m\][\u\[\e[38;5;153m\]@\[\e[38;5;153m\]\h \[\e[38;5;214m\]\w\[\e[38;5;153m\]]\[\033[0m\]$ "
+PS1="\[\e[1;32m\][\u\[\e[1;32m\]@\[\e[1;32m\]\h \[\e[0;93m\]\w\[\e[1;32m\]]\[\033[0m\]$ "
 ```
 
 Thicker fonts:

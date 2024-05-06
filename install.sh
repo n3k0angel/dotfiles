@@ -40,7 +40,7 @@ paru -S --needed --noconfirm lf bashmount ctpv newsraft numlockx librewolf-bin b
 # Bash prompt
 sed '/PS1/d' /home/$USER/.bashrc > /home/$USER/bashrc-temp
 mv /home/$USER/bashrc-temp /home/$USER/.bashrc
-echo 'echo PS1="\[\e[38;5;153m\][\u\[\e[38;5;153m\]@\[\e[38;5;153m\]\h \[\e[38;5;214m\]\w\[\e[38;5;153m\]]\[\033[0m\]$ "' >> /home/$USER/.bashrc
+echo 'PS1="\[\e[1;32m\][\u\[\e[1;32m\]@\[\e[1;32m\]\h \[\e[0;93m\]\w\[\e[1;32m\]]\[\033[0m\]$ "' >> /home/$USER/.bashrc
 echo "EDITOR=nvim" >> /home/$USER/.bashrc
 echo 'alias ls="ls -lah --color=always"' >> /home/$USER/.bashrc
 echo 'alias bm="bashmount"' >> /home/$USER/.bashrc
