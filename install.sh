@@ -10,9 +10,11 @@ fi
 GITDIR="/home/$USER/dotfiles"
 CONFDIR="/home/$USER/.config/"
 SSHDIR="/home/$USER/.ssh/"
+LOCALBINDIR="/home/$USER/.local/bin/"
 
 mkdir -p $CONFDIR
 mkdir -p $SSHDIR
+mkdir -p $LOCALBINDIR
 
 # Add $USER to needed groups
 sudo usermod -aG network,floppy,scanner,power,video,storage,optical,kvm,input,disk,audio $USER
@@ -53,6 +55,10 @@ sudo chmod o-w /etc/environment
 # Install configs
 cp -r .config/* $CONFDIR/
 cp -r .ssh/* $SSHDIR/
+
+# Install scripts
+cp -r .local/bin/* $LOCALBINDIR
+chmod +x $LOCALBINDIR/*
 
 # Create a script to be run after logging out and back in
 echo '#!/usr/bin/sh' > /home/$USER/run-me.sh

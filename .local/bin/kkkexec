@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+
+doas kexec -l /boot/vmlinuz-linux-zen --initrd=/boot/initramfs-linux-zen.img --reuse-cmdline
+doas reboot

@@ -1,0 +1,17 @@
+#!/bin/bash
+dwm="$(which dwm)"
+
+
+# put dem launcheblae dings here
+list=("steam" "prismlauncher" "st") # array of items
+gamelist=$(for i in "${list[@]}"; do echo "$i" ; done)
+
+
+clear
+game=$(printf "$gamelist" | fzf --no-info --prompt "" --padding 0,1,1,1 --disabled --reverse --bind='change:clear-query')
+realgame=$(which ${game})
+
+tmpgame="/tmp/tmpgame.sh"
+DISPLAY=:1.0
+echo -e "setxkbmap -layout fi &\n${dwm} &\n${realgame}" > ${tmpgame}
+xinit ${tmpgame} -- :1 vt$XDG_VTNR

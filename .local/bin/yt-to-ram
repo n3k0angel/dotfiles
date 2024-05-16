@@ -1,0 +1,41 @@
+#!/usr/bin/bash
+#
+# dependencies: fzf, mpv, yt-dlp
+
+#if no videostemp directory is found
+novideostemp(){
+	#sudo mkdir videostemp && sudo chown $USER:$USER videostemp/ && cd videostemp
+	mkdir videostemp && cd videostemp
+}
+
+#cd to ram
+cd /dev/shm
+#cd to videos temp ## call novideostemp function if cd fails
+cd videostemp || novideostemp
+
+# Sponsorblock options
+SPONSORBLOCK="--sponsorblock-mark all --sponsorblock-remove sponsor"
+
+#menu loop
+while [ true ]; do
+	VIDEOCOUNT=$(ls | wc -l)
+	RAM=$(du -sh)
+	OPTION=$(printf "Videos: $VIDEOCOUNT\n RAM used: $RAM\n1. Watch\n2. Rewatch\n3. Clear RAM\n4. Exit and clear RAM" | fzf --no-info --prompt "" --padding 0,1,1,1 --disabled --reverse --header-lines=2 --bind='change:clear-query')
+	case $OPTION in
+		1*)
+			clear && read -p "Link: " link && yt-dlp $SPONSORBLOCK -f "bestvideo[height<=?1080]+bestaudio/best" "$link" && video=$(echo $link | sed 's/https:[/][/]youtube.com[/]watch?v=//g') && echo $video && mpv *$video*;;
+		2*)
+			mpv "$(fzf --reverse)";;
+		3*)
+			rm -v *;;
+		4*)
+			break;;
+		*)
+			echo "Unknown option";;
+
+	esac
+
+done
+rm -v * 
+echo "Exiting..."
+exit 0
