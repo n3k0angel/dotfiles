@@ -1,6 +1,9 @@
 #!/bin/bash
-dwm="$(which dwm)"
+set -e
+set -o pipefail
 
+# put your preferred window manager here
+wm="$(which openbox)"
 
 # put dem launcheblae dings here
 list=("steam" "prismlauncher" "st") # array of items
@@ -13,5 +16,5 @@ realgame=$(which ${game})
 
 tmpgame="/tmp/tmpgame.sh"
 DISPLAY=:1.0
-echo -e "setxkbmap -layout fi &\n${dwm} &\n${realgame}" > ${tmpgame}
+echo -e "setxkbmap -layout fi &\n${wm} &\n${realgame}" > ${tmpgame}
 xinit ${tmpgame} -- :1 vt$XDG_VTNR
