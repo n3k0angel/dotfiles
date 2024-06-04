@@ -20,7 +20,7 @@ mkdir -p $LOCALBINDIR
 sudo usermod -aG network,floppy,scanner,power,video,storage,optical,kvm,input,disk,audio $USER
 
 # Install stuff
-sudo pacman -S --needed --noconfirm git base-devel man pipewire pipewire-pulse wireplumber neovim mpv hdparm bat powertop keepassxc feh fzf btop udisks2 dunst acpi brightnessctl slock pcmanfm-gtk3 xsel xdg-user-dirs chafa ffmpegthumbnailer
+sudo pacman -S --needed --noconfirm git base-devel man pipewire pipewire-pulse wireplumber neovim mpv hdparm bat powertop keepassxc feh fzf btop udisks2 dunst acpi brightnessctl slock pcmanfm-gtk3 xsel xdg-user-dirs chafa ffmpegthumbnailer picom
 
 xdg-user-dirs-update
 
@@ -37,7 +37,7 @@ sudo rm -rv paru-bin
 cd $GITDIR
 
 # Install more stuff
-paru -S --needed --noconfirm lf bashmount ctpv newsraft numlockx librewolf-bin brave-bin ungoogled-chromium-bin compfy invidtui-bin gpg-tui
+paru -S --needed --noconfirm lf bashmount ctpv newsraft numlockx librewolf-bin brave-bin ungoogled-chromium-bin invidtui-bin gpg-tui
 
 # Bash prompt
 sed '/PS1/d' /home/$USER/.bashrc > /home/$USER/bashrc-temp
