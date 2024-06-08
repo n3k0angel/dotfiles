@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+set -o pipefail
+
+wm="$(which openbox)"
+${wm} --version | echo "Please install openbox"
+
+tmpgame="/tmp/tmpgame.sh"
+DISPLAY=:1.0
+echo -e "setxkbmap -layout fi &\n${wm}" > ${tmpgame}
+xinit ${tmpgame} -- :1 vt$XDG_VTNR
