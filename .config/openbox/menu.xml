@@ -6,6 +6,11 @@
   <item label="Reconfigure Openbox">
     <action name="Reconfigure" />
   </item>
+  <item label="Quit">
+    <action name="Execute">
+      <command>pkill -TERM openbox</command>
+    </action>
+  </item>
 </menu>
 
 <menu id="root-menu" label="Openbox 3">
