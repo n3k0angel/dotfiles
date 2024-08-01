@@ -20,7 +20,7 @@ mkdir -p $LOCALBINDIR
 sudo usermod -aG network,floppy,scanner,power,video,storage,optical,kvm,input,disk,audio $USER
 
 # Install stuff
-sudo pacman -S --needed --noconfirm git base-devel man pipewire pipewire-pulse wireplumber neovim mpv hdparm bat powertop keepassxc xwallpaper fzf btop udisks2 dunst acpi brightnessctl slock pcmanfm-gtk3 xsel xdg-user-dirs chafa ffmpegthumbnailer picom
+sudo pacman -S --needed --noconfirm git base-devel man pipewire pipewire-pulse wireplumber neovim mpv hdparm bat powertop keepassxc xwallpaper fzf btop udisks2 dunst acpi brightnessctl slock pcmanfm-gtk3 xsel xdg-user-dirs chafa ffmpegthumbnailer picom redshift
 
 xdg-user-dirs-update
 
@@ -53,8 +53,12 @@ echo 'FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=
 sudo chmod o-w /etc/environment
 
 # Install configs
-cp -r .config/* $CONFDIR/
-cp -r .ssh/* $SSHDIR/
+cp -rv .config/* $CONFDIR/
+cp -rv .ssh/* $SSHDIR/
+
+# .xinitrc
+cp .xinitrc ~/
+chmod +x ~/.xinitrc
 
 # Install scripts
 cp -r .local/bin/* $LOCALBINDIR

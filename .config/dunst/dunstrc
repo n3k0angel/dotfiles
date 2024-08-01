@@ -1,0 +1,20 @@
+[urgency_low]
+    background = "#282828"
+    highlight = "#a89984"
+    frame_color = "#282828"
+    foreground = "#fbf1c7"
+    timeout = 8
+
+[urgency_normal]
+    background = "#282828"
+    highlight = "#a89984"
+    frame_color = "#282828"
+    foreground = "#fbf1c7"
+    timeout = 8
+
+[urgency_critical]
+    background = "#282828"
+    highlight = "#fb4934"
+    foreground = "#fbf1c7"
+    frame_color = "#d3869b"
+    timeout = 0
