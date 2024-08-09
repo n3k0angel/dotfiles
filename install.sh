@@ -57,8 +57,12 @@ cp -rv .config/* $CONFDIR/
 cp -rv .ssh/* $SSHDIR/
 
 # .xinitrc
-cp .xinitrc ~/
+cp -v .xinitrc ~/
 chmod +x ~/.xinitrc
+
+# .wallpaper
+cp -v .wallpaper ~/
+chmod +x ~/.wallpaper
 
 # Install scripts
 cp -r .local/bin/* $LOCALBINDIR
