@@ -1,4 +1,3 @@
-sleep 1s
 setxkbmap -layout fi
 numlockx &
 xrandr -s 1920x1080 --dpi 96
@@ -16,6 +15,7 @@ while true; do
 
    xsetroot -name "$BRIGHTNESS $SPACE $BATTERY $SPACE $DATETIME"
    sleep 1s
+
 done &
 
 # Disable middle-mouse paste
@@ -23,12 +23,15 @@ while true; do
     xsel -fin </dev/null
 done &
 
-/usr/bin/pipewire &
-sleep 2
-/usr/bin/pipewire-pulse &
-sleep 2
-/usr/bin/wireplumber &
-sleep 2
+# Audio function to start pipewire, pipewire-pulse & wireplumber in the background
+audio (){
+  /usr/bin/pipewire &
+  sleep 2
+  /usr/bin/pipewire-pulse &
+  /usr/bin/wireplumber &
+}
+
+audio &
 
 dunst &
 
